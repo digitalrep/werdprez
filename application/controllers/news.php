@@ -4,22 +4,22 @@
   {
 	
     public function __construct()
-	{
-	  parent::__construct();
-	  $this->load->model('news_model');
-	  $this->load->helper(array('form', 'url'));
-	}
+    {
+      parent::__construct();
+      $this->load->model('news_model');
+      $this->load->helper(array('form', 'url'));
+    }
 	
-	public function index()
-	{
-	  $data['news'] = $this->news_model->get_news();
-	  $data['title'] = 'News';
-	  $data['tags'] = $this->news_model->get_tags();
-	  $data['archives'] = $this->news_model->get_archives();
-	  $this->load->view('templates/header' $data);
-	  $this->load->view('news/index', $data);
-	  $this->load->view('templates/footer');
-	}
+    public function index()
+    {
+      $data['news'] = $this->news_model->get_news();
+      $data['title'] = 'News';
+      $data['tags'] = $this->news_model->get_tags();
+      $data['archives'] = $this->news_model->get_archives();
+      $this->load->view('templates/header' $data);
+      $this->load->view('news/index', $data);
+      $this->load->view('templates/footer');
+    }
 
 	public function view($slug)
 	{
