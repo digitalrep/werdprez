@@ -47,7 +47,14 @@
 	  </li>
 	  <li>
 	    <h4 class="title">Archives</h4>
-	    <p class="archives"></p>
+	    <p class="archives">
+		<?php 
+		  for($i=0;$i<sizeof($archives);$i++)
+		  {
+		    echo $archives[$i];
+		  }
+		?>
+		</p>
 	  </li>	  
 	</ul>
   </div>

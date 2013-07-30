@@ -68,6 +68,7 @@
 	  $data['latest'] = $this->news_model->get_latest();
 	  $data['title'] = 'Search Results';
 	  $data['tags'] = $this->news_model->get_tags();
+	  $data['archives'] = $this->news_model->get_archives();
 	  $this->load->view('templates/header' $data);
 	  $this->load->view('news/search', $data);
 	  $this->load->view('templates/footer');
