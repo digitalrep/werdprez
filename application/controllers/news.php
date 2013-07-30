@@ -26,7 +26,6 @@
 	  $data['news_item'] = $this->news_model->get_news($slug);
 	  if(empty($data['news_item']))
 	  {
-	    echo "Empty";
 	    show_404();
 	  }
 	  $data['title'] = $data['news_item']['title'];
@@ -38,9 +37,8 @@
 	public function tag($tag)
 	{
 	  $data['news'] = $this->news_model->get_news_by_tag($tag);
-	  if(empty($data['news_item']))
+	  if(empty($data['news']))
 	  {
-	    echo "Empty";
 	    show_404();
 	  }
 	  $data['latest'] = $this->news_model->get_latest();
