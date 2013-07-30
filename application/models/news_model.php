@@ -18,27 +18,6 @@
 	  return $query->row_array();
 	}
 	
-	public function set_news()
-	{
-	  $this->load->helper('url');
-	  $slug = url_title($this->input->post('title'), 'dash', TRUE);
-	  $day = date("d");
-	  $month = date("m");
-	  $year = date("Y");
-	  $data = array(
-		'day' => $day,
-		'month' => $month,
-		'year' => $year,
-	    'author' => $this->input->post('author'),
-	    'title' => $this->input->post('title'),
-	    'intro' => $this->input->post('intro'),
-		'slug' => $slug,
-		'text' => $this->input->post('text'),
-		'tags' => $this->input->post('tags')
-	  );
-	  return $this->db->insert('news', $data);
-	}
-	
 	public function get_tags()
 	{
 	  $query = $this->db->query('SELECT tags FROM news');
